@@ -22,46 +22,48 @@ namespace MyNotesApi.Data.Migrations
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("MyNotesApi.Data.Note", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("Content")
+                    .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2");
+                b.Property<DateTime>("CreationTime")
+                    .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ModifiedTime")
-                        .HasColumnType("datetime2");
+                b.Property<DateTime>("ModifiedTime")
+                    .HasColumnType("datetime2");
 
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                b.Property<string>("Title")
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .HasColumnType("nvarchar(200)");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.ToTable("Notes");
+                b.ToTable("Notes");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sapien id purus sagittis pellentesque. Donec egestas quam ut lorem semper, nec varius tortor congue. Nam est mauris, dictum non nunc at, tempus tristique odio. Pellentesque iaculis tortor sem, in elementum magna eleifend ut.",
-                            CreationTime = new DateTime(2022, 3, 22, 10, 42, 6, 238, DateTimeKind.Local).AddTicks(4551),
-                            ModifiedTime = new DateTime(2022, 3, 22, 10, 42, 6, 239, DateTimeKind.Local).AddTicks(3572),
-                            Title = "Sample Note 1"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Content = "Etiam eu ligula fringilla mi placerat convallis. Aliquam tempus, mauris id tempus commodo, quam justo gravida nibh, scelerisque condimentum metus velit et felis. Morbi mi ipsum, maximus blandit condimentum ut, consectetur vitae ante. Ut viverra mollis metus, sollicitudin gravida felis imperdiet sed.",
-                            CreationTime = new DateTime(2022, 3, 22, 10, 42, 6, 239, DateTimeKind.Local).AddTicks(4603),
-                            ModifiedTime = new DateTime(2022, 3, 22, 10, 42, 6, 239, DateTimeKind.Local).AddTicks(4608),
-                            Title = "Sample Note 1"
-                        });
-                });
+                b.HasData(
+                    new
+                    {
+                        Id = 1,
+                        Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sapien id purus sagittis pellentesque. Donec egestas quam ut lorem semper, nec varius tortor congue. Nam est mauris, dictum non nunc at, tempus tristique odio. Pellentesque iaculis tortor sem, in elementum magna eleifend ut.",
+                        CreationTime = new DateTime(2022, 3, 22, 10, 37, 1, 308, DateTimeKind.Local).AddTicks(9723),
+                        ModifiedTime = new DateTime(2022, 3, 22, 10, 37, 1, 310, DateTimeKind.Local).AddTicks(7810),
+                        Title = "Sample Note 1"
+                    },
+                    new
+                    {
+                        Id = 2,
+                        Content = "Etiam eu ligula fringilla mi placerat convallis. Aliquam tempus, mauris id tempus commodo, quam justo gravida nibh, scelerisque condimentum metus velit et felis. Morbi mi ipsum, maximus blandit condimentum ut, consectetur vitae ante. Ut viverra mollis metus, sollicitudin gravida felis imperdiet sed.",
+                        CreationTime = new DateTime(2022, 3, 22, 10, 37, 1, 311, DateTimeKind.Local).AddTicks(44),
+                        ModifiedTime = new DateTime(2022, 3, 22, 10, 37, 1, 311, DateTimeKind.Local).AddTicks(54),
+                        Title = "Sample Note 1"
+                    });
+            });
 #pragma warning restore 612, 618
         }
     }

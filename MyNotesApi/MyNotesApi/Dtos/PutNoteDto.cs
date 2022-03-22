@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyNotesApi.Data
+namespace MyNotesApi.Dtos
 {
-    public class Note
+    public class PutNoteDto
     {
         public int Id { get; set; }
 
@@ -14,9 +14,5 @@ namespace MyNotesApi.Data
         public string Title { get; set; }
 
         public string Content { get; set; }
-
-        public DateTime CreationTime { get; set; } = DateTime.Now;
-
-        public DateTime ModifiedTime { get; set; } = DateTime.Now;
     }
 }

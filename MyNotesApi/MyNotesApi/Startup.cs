@@ -28,7 +28,12 @@ namespace MyNotesApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(ob => ob.UseSqlServer(Configuration.GetConnectionString("ApplicationDbContext")));
+
+            #region MyServices
+            services.AddCors(options => options.AddDefaultPolicy(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()));
+            services.AddDbContext<ApplicationDbContext>(ob => ob.UseSqlServer(Configuration.GetConnectionString("ApplicationDbContext"))); 
+            #endregion
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -49,6 +54,10 @@ namespace MyNotesApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            #region MyUses
+            app.UseCors(); 
+            #endregion
 
             app.UseAuthorization();
 
