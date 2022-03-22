@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { Button, Container } from 'react-bootstrap';
 
 const API_URL = "https://localhost:5001/";
 
@@ -19,10 +21,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My Notes</h1>
-      <ul>
-        {notes.map((x, i) => <li key={i}>{x.title}</li>)}
-      </ul>
+      <Container>
+        <h1 className="mt-3">My Notes</h1>
+        <ul>
+          {notes.map((x, i) => <li key={i}>{x.title}</li>)}
+        </ul>
+      </Container>
     </div>
   );
 }
