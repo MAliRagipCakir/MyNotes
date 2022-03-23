@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MyNotesApi.Data.Migrations
+namespace MyNotesApi.Migrations
 {
     public partial class InitialCreate : Migration
     {
@@ -26,12 +26,12 @@ namespace MyNotesApi.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Notes",
                 columns: new[] { "Id", "Content", "CreationTime", "ModifiedTime", "Title" },
-                values: new object[] { 1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sapien id purus sagittis pellentesque. Donec egestas quam ut lorem semper, nec varius tortor congue. Nam est mauris, dictum non nunc at, tempus tristique odio. Pellentesque iaculis tortor sem, in elementum magna eleifend ut.", new DateTime(2022, 3, 22, 10, 37, 1, 308, DateTimeKind.Local).AddTicks(9723), new DateTime(2022, 3, 22, 10, 37, 1, 310, DateTimeKind.Local).AddTicks(7810), "Sample Note 1" });
+                values: new object[] { 1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sapien id purus sagittis pellentesque. Donec egestas quam ut lorem semper, nec varius tortor congue. Nam est mauris, dictum non nunc at, tempus tristique odio. Pellentesque iaculis tortor sem, in elementum magna eleifend ut.", new DateTime(2022, 3, 23, 11, 10, 46, 596, DateTimeKind.Local).AddTicks(8098), new DateTime(2022, 3, 23, 11, 10, 46, 597, DateTimeKind.Local).AddTicks(7918), "Sample Note 1" });
 
             migrationBuilder.InsertData(
                 table: "Notes",
                 columns: new[] { "Id", "Content", "CreationTime", "ModifiedTime", "Title" },
-                values: new object[] { 2, "Etiam eu ligula fringilla mi placerat convallis. Aliquam tempus, mauris id tempus commodo, quam justo gravida nibh, scelerisque condimentum metus velit et felis. Morbi mi ipsum, maximus blandit condimentum ut, consectetur vitae ante. Ut viverra mollis metus, sollicitudin gravida felis imperdiet sed.", new DateTime(2022, 3, 22, 10, 37, 1, 311, DateTimeKind.Local).AddTicks(44), new DateTime(2022, 3, 22, 10, 37, 1, 311, DateTimeKind.Local).AddTicks(54), "Sample Note 1" });
+                values: new object[] { 2, "Etiam eu ligula fringilla mi placerat convallis. Aliquam tempus, mauris id tempus commodo, quam justo gravida nibh, scelerisque condimentum metus velit et felis. Morbi mi ipsum, maximus blandit condimentum ut, consectetur vitae ante. Ut viverra mollis metus, sollicitudin gravida felis imperdiet sed.", new DateTime(2022, 3, 23, 11, 10, 46, 597, DateTimeKind.Local).AddTicks(9119), new DateTime(2022, 3, 23, 11, 10, 46, 597, DateTimeKind.Local).AddTicks(9123), "Sample Note 2" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
